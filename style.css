@@ -1,0 +1,469 @@
+/* ABRI FATFACE FONT */
+@import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&display=swap');
+
+/* POPPINS FONT */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+/* ===== COLOR VARIABLES ===== */
+:root{
+    --first-color: #6429EF;
+    --second-color: #E7DBDB;
+    --third-color: #FFFFFF;
+    --black-color: #000000;
+    --dark-blue: #372461;
+    --bg-color: #FFFFFF;
+    --blur-element-color: #E7DBDB;
+    --shadow-1: 0 0 20px 5px rgb(101, 41, 240, 0.5); 
+    --shadow-2: 0 0 20px 5px rgb(232, 219, 219);
+}
+
+/* =====DARK MODE COLOR VARIABLES ===== */
+body.dark-mode{
+    --black-color:#FFFFFF;
+    --dark-blue: #6429EF;
+    --bg-color: #222;
+    --blur-element-color: #555;
+    --shadow-2: 0 0 20px 5px rgb(232, 219, 219,0.3);
+}
+
+body{
+    background-color: var(--bg-color);
+    transition: .3s;
+}
+
+
+/* ===== Blur Background ===== */
+
+.wrapper{
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color:transparent;
+    filter: blur(50px);
+    z-index: 1;
+}
+
+.wrapper::before{
+    content: "";
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    background-color: var(--blur-element-color);
+    border-radius: 50%;
+    z-index: 0;
+
+
+}
+
+.wrapper::after{
+    content: "";
+    position: absolute;
+    top: 160px;
+    right: 10vw;
+    width: 100px;
+    height: 100px;
+    background-color: var(--blur-element-color);
+    border-radius: 50%;
+    z-index: 0;
+    
+
+}
+
+.wrapper .circle-1{
+    position: absolute;
+   bottom: 100px;
+    width: 50px;
+    left: 60%;
+    height: 50px;
+    background-color: var(--blur-element-color);
+    border-radius: 50%;
+    z-index: 0;
+}
+
+/* ===== Header - Navigation Bar ===== */
+
+header{
+    position: fixed;
+    font-family: 'Abril Fatface',serif;
+    font-weight: bolder;
+    height: 100px;
+    width: 100%;
+    display: flex;
+    z-index: 50;
+    justify-content: space-between;
+    align-items:center;
+    padding: 0 8vw;
+    
+}
+
+.logo span{
+    font-size: 35px;
+    color: var(--black-color);
+}
+
+.nav-menu{
+    display: flex;
+    list-style-type: none;
+
+}
+
+.nav-list{
+    padding:  0 30px;
+}
+
+.nav-link{
+    position: relative;
+    text-decoration: none;
+    transition: 0.3s;
+    font-size: 18px;
+    color: var(--black-color);
+}
+ .nav-link:hover{
+    color: var(--first-color);
+
+ }
+
+ .nav-link::after{
+    content: '';
+    position: absolute;
+    left: 0;
+    background-color: var(--first-color);
+    bottom: -7px;
+    width: 100%;
+    height: 2px;
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform .3s;
+
+ }
+
+ .nav-link:hover::after{
+    transform: scaleX(1);
+    transform-origin: left;
+ }
+
+ .nav-button{
+    display: flex;
+    align-items: center;
+    gap: 20px;
+
+ }
+
+ .btn{
+    padding: 0 24px;
+    height: 45px;
+    border: none;
+    font-size: 15px;
+    border-radius: 50px;
+    transition: opacity 0.3s;
+    cursor: pointer;
+ }
+
+ .hire-me-btn{
+    font-family: 'Abril Fatface';
+    font-weight: bolder;
+    background-color: var(--second-color);
+ }
+
+ .hire-me-btn:hover{
+    opacity: 0.8;
+ }
+
+ .nav-button span{
+    color: var(--black-color);
+    cursor: pointer;
+ }
+
+ .nav-button .dark-mode-toggle{
+    font-size: 18px;
+ }
+ .nav-button .menu-toggle{
+    display: none;
+    font-size: 24px;
+    cursor: pointer;
+
+ }
+/* ===== Hero section ===== */
+.hero{
+    position: relative;
+    display: flex;
+    padding: 0 8vw;
+    width: 100%;
+    height: 100vh;
+    z-index: 5;
+
+}
+
+
+.col{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 50%;
+
+}
+
+.hero-work{
+    font-family: 'Abril Fatface';
+    font-size: 50px;
+    color: var(--black-color); 
+    animation: fade-right 2s var(--animation-delay) forwards;  
+    --animation-delay: 200ms;
+}
+
+.hero-description{
+    font-family: 'Poppins', sans-serif;
+    padding-block: 20px 30px;
+    width: 500px;
+    color: var(--black-color);
+    animation: fade-right 2s var(--animation-delay) forwards;  
+    --animation-delay: 400ms;
+}
+
+.hero-buttons{
+    display: flex;
+    gap: 20px;
+    animation: fade-right 2s var(--animation-delay) forwards;  
+    --animation-delay: 600ms;
+   
+}
+
+.download-btn{
+    font-family: 'Poppin',sans-serif;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background-color: var(--first-color);
+    color:var(--third-color);
+    box-shadow: var(--shadow-1);
+
+}
+
+.play-btn{
+    padding: 0;
+    width: 45px;
+    background-color: var(--second-color);
+    box-shadow: var(--shadow-2);
+
+}
+
+.play-btn .bx-play{
+    font-size: 24px;
+}
+/* ====== Hero Image section ===== */
+.hero-social-icon{
+    position: absolute;
+    bottom: 80px;
+    display: flex;
+    gap: 50px;
+}
+
+.hero-social-icon i{
+    font-size: 24px;
+    color: var(--black-color);
+    cursor: pointer;
+    transition: color .3s;
+    animation: fade-down 1s ease-in-out var(--animation-delay) forwards;
+}
+
+.hero-social-icon:hover{
+    color: var(--first-color); 
+}
+
+.bxl-github{
+    --animation-delay:0ms;
+    --icon-count:-20px;
+}
+
+.bxl-dribbble{
+    --animation-delay:200ms;
+    --icon-count:-50px;
+}
+
+.bxl-twitter{
+    --animation-delay:400ms;
+    --icon-count:-80px;
+}
+
+.bxl-facebook-circle{
+    --animation-delay:600ms;
+    --icon-count:-100px;
+}
+
+.col-2{
+    position: relative;
+    display: flex;
+    align-items: flex-end;
+}
+
+.hero-img-container{
+    width: 400px;
+    height: 405px;
+    background-color:var(--first-color);
+    border-radius: 46% 54% 34% 66%/ 54% 61% 39% 46%;
+    animation: fade-left 1.4ms ease-in-out;
+    overflow: hidden;
+
+}
+
+.hero-img-container::before{
+    content: '';
+    position: absolute;
+    width: 410px;
+    height: 415px;
+    border: 2px solid var(--first-color);
+    border-radius: 46% 54% 34% 66%/ 54% 61% 39% 46%;
+    top: 50%;
+    right: -6px;
+    transform: translateY(-50%);
+}
+
+.hero-image{
+    height: 405px;
+}
+/* ===== Animations ==== */
+@keyframes fade-right{
+    from{
+        transform: translateX(-50px);
+        opacity: 0;
+    }
+    top{
+        opacity: 1;
+    }
+}
+
+@keyframes fade-down{
+    from{
+        transform: translateY(var(--icon-count));
+        opacity: 0;
+    }
+    top{
+        opacity: 1;
+    }
+}
+
+@keyframes fade-left{
+    from{
+        transform: translateX(50px);
+        opacity: 0;
+    }
+    top{
+        opacity: 1;
+    }
+}
+
+/* ===== Responsive Design ===== */
+@media (max-width:1052px){
+    header, .hero{
+        padding: 0 4vw;  
+    }
+}
+
+@media (max-width:962px){
+    header{
+      position: relative;  
+    }
+    
+    .nav-button .menu-toggle{
+        display: block;
+    }
+
+    .nav-menu.display-menu{
+        display: flex;
+    }
+
+    .nav-menu{
+        display: none;
+        position: absolute;
+        top: 100px;
+        right: 0;
+        flex-direction: column;
+        align-items: center;
+        width: 300px;
+        padding: 40px 0;
+        backdrop-filter: blur(20px);
+        background-color: rgba(255, 255, 255, 0.8);
+        border-radius: 20px 0 20px 20px;
+        box-shadow: -8px -8px 20px rgba(0, 0, 0, 0.2px);
+
+    }
+
+    .nav-list{
+        margin: 20px 0;
+    }
+
+    .nav-link{
+        color: #000000;
+    }
+
+    .hero{
+        flex-direction: column;
+
+    }
+
+    .col{
+        width: 100%;
+    }
+
+    .col-1{
+        order: 2;
+    }
+
+    .col-2{
+        order: 1;
+        align-items: center;
+         margin-top: 7px;
+    }
+
+    .hero-img-container::before{
+        top: 50%;
+        left:50%;
+        transform: translate(-50%,  -50%);
+    }
+    .hero-social-icon{
+        position: static;
+        margin: 60px 0;
+    } 
+}
+
+@media(max-width:514px){
+    header, .hero{
+        padding: 6vw;
+
+    }
+
+    .hire-me-btn{
+        display: none;
+    }
+
+    .hero-work{
+        font-size: 40px;
+    }
+
+    .hero-img-container{
+        width: 270px;
+        height: 275px;
+    }
+
+    .hero-img-container::before{
+        width: 280px;
+        height: 285px;
+    }
+
+    .hero-image{
+        height: 275px;
+    }
+
+    .hero-description{
+        width: inherit;
+    }
+
+}
