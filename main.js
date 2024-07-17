@@ -9,3 +9,12 @@ menuToggle.addEventListener('click',()=> {
 darkModeToggle.addEventListener('click',()=> {
     document.body.classList.toggle('dark-mode');
 })
+
+document.getElementById('downloadCVButton').addEventListener('click', function() {
+    const link = document.createElement('a');
+    link.href = 'assets/BENTUM YAW RICHMOND CV.pdf';
+    link.download = 'CV.pdf';
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+});
