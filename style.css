@@ -305,10 +305,10 @@ header{
 }
 
 .hero-img-container{
-    width: 400px;
+    width: 305px;
     height: 405px;
     background-color:var(--first-color);
-    border-radius: 46% 54% 34% 66%/ 54% 61% 39% 46%;
+    border-radius: 50% 50% 50% 50%/ 50% 50% 50% 50%;
     animation: fade-left 1.4ms ease-in-out;
     overflow: hidden;
 
@@ -317,10 +317,10 @@ header{
 .hero-img-container::before{
     content: '';
     position: absolute;
-    width: 410px;
+    width: 310px;
     height: 415px;
     border: 2px solid var(--first-color);
-    border-radius: 46% 54% 34% 66%/ 54% 61% 39% 46%;
+    border-radius: 50% 50% 50% 50%/ 50% 50% 50% 50%;
     top: 50%;
     right: -6px;
     transform: translateY(-50%);
@@ -449,12 +449,12 @@ header{
     }
 
     .hero-img-container{
-        width: 270px;
+        width: 200px;
         height: 275px;
     }
 
     .hero-img-container::before{
-        width: 280px;
+        width: 210px;
         height: 285px;
     }
 
